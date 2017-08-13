@@ -1,0 +1,58 @@
+\section{Introduction}
+
+
+The Memo of understanding with Chile roughly defines a Data Access Center at the base facility in Chile.
+In this document we would like to begin to specify more precisely with this data access center would look like and
+the full range of services it will provide. This should be seen as an initial discussion document to allow the Chilean colleagues to collaborate with us to define the Chilean DAC.
+
+\section{The Chilean DAC}
+
+The Chilean DAC should be very similar to the US DAC at NCSA. We will deploy the  science platform in Chile as the interface to the system. The science platform is now well documented with the vision  given in \citeds{LSE-319}
+more formal requirements in \citeds{LDM-554} and the design in \citeds{LDM-542}.
+
+The DAC will require other software, some  hardware and of course data to function as a DAC. We go through these in the following sections.
+
+
+\subsection{Software and Services }
+The components of the science platform: Portal, Access Services(DAX) and Notebooks (JupyterLab) will be deployed in Chile in the same manner as NCSA. Currently using Kubernetes to deploy Docker Containers.
+The platform gives access, through the notebook, to several versions of the LSST Software Stack allowing processing of image data etc. This interface will also allow users to spawn batch jobs,to process large amounts of data. such batch jobs will have to be written using the Data Management batch system used by LSST large processing. This is accessed through super task (see \citeds{LDM-152}).
+
+The science platform allows users to upload files and images as well as store temporary results. It most be noted that users of the Chilean DAC will have access to the US DAC however the \emph{user data} is bound to the site where it was created.
+
+All the regular security services etc will also be deployed in Chile as in NCSA. The entire system will be administered from NCSA in Illinois thus if new versions of software are deployed in Illinois they will also be deployed in Chile.
+
+In addition we will need to work together to get the authentication system of the Clean Grid integrated withe the DAC - thus we should be able to Authenticate users using Grid credentials furthermore we should be able to access grid resources from the DAC using the same credentials.
+
+The MOU also mentions last mile networking to Chilean astronomers. We believe this is covered with the current networks to Santiago but we should discuss and agree.
+
+\subsection{Hardware and infrastructure}
+The Chilean MOU provides for a DAC which is 10\% of the size of the US DAC. The current DR2 US DAC is intended to comprise:
+\begin{itemize}
+\item Computing:2,400 cores ($\approx 18$ TFLOPs)
+\item File storage: $\approx 4 $PB  (VOSpace)
+\item Database storage: $\approx 3 $PB (MYDB)
+
+\end{itemize}
+
+Hence The Chilean DAC would at a minimum have:
+\begin{itemize}
+\item Computing:2,40 cores ($\approx 1.8$ TFLOPs)
+\item File storage: $\approx 400 $TB  (VOSpace)
+\item Database storage: $\approx 300 $TB (MYDB)
+
+\end{itemize}
+
+In addition there would be disk to hold the RAW data and Catalogs.
+
+Access to he the DAC will of course require networks. Here we have done better than planned with 200 Gbps links
+
+
+\subsection{Data }
+
+The raw data will be stored on disk at the base facility.
+\note{All raw data ?}
+
+\input{products}
+
+\seciton{Conclusion}
+We will put a useful scientific service in the base facility in Chile. This should enable local science activities and also provide seamless access to further resources at NCSA.
