@@ -2,7 +2,7 @@
 
 
 The Memo of understanding with Chile roughly defines a Data Access Center at the base facility in Chile.
-In this document we would like to begin to specify more precisely with this data access center would look like and
+In this document we would like to begin to specify more precisely what this data access center would look like and
 the full range of services it will provide. This should be seen as an initial discussion document to allow the Chilean colleagues to collaborate with us to define the Chilean DAC.
 
 \section{The Chilean DAC}
@@ -15,7 +15,7 @@ The DAC will require other software, some  hardware and of course data to functi
 
 \subsection{Software and Services }
 The components of the science platform: Portal, Access Services(DAX) and Notebooks (JupyterLab) will be deployed in Chile in the same manner as NCSA. Currently using Kubernetes to deploy Docker Containers.
-The platform gives access, through the notebook, to several versions of the LSST Software Stack allowing processing of image data etc. This interface will also allow users to spawn batch jobs,to process large amounts of data. such batch jobs will have to be written using the Data Management batch system used by LSST large processing. This is accessed through super task (see \citeds{LDM-152}).
+The platform gives access, through the notebook, to several versions of the LSST Software Stack allowing processing of image data etc. This interface will also allow users to spawn batch jobs,to process large amounts of data. such batch jobs will have to be written using the batch system used by LSST large processing.
 
 The science platform allows users to upload files and images as well as store temporary results. It most be noted that users of the Chilean DAC will have access to the US DAC however the \emph{user data} is bound to the site where it was created.
 
@@ -23,7 +23,6 @@ All the regular security services etc will also be deployed in Chile as in NCSA.
 
 In addition we will need to work together to get the authentication system of the Clean Grid integrated withe the DAC - thus we should be able to Authenticate users using Grid credentials furthermore we should be able to access grid resources from the DAC using the same credentials.
 
-The MOU also mentions last mile networking to Chilean astronomers. We believe this is covered with the current networks to Santiago but we should discuss and agree.
 
 \subsection{Hardware and infrastructure}
 The Chilean MOU provides for a DAC which is 10\% of the size of the US DAC. The current DR2 US DAC is intended to comprise:
@@ -46,7 +45,15 @@ In addition there would be disk to hold the RAW data and Catalogs.
 
 \subsubsection{Networks}
 Access to he the DAC will of course require networks. Here we have done better than planned with 200 Gbps links.
-A priority scheme will be put in place to ensure availability of this network  for Chilean academic use, at some times there would potentially bee 140Gbps available to Chileans.  We shall measure the network performance and under nominal conditions we will ensure that Chilean academic priorities are met on the network. REUNA will manage the north south link hence we should be able to achieve this easily.  We must ensure with REUNA that traffic coming into USA also meets the NSF acceptable use policy for the NSF funded US network - there is no problem with academic traffic.
+A priority scheme is being put in place to ensure availability of this network  for Chilean academic use, through our  \$7M USD investment in REUNA.
+REUNA (the Chilean Research and Educational Network, similar to Internet2 in the US) is our primary network operator in Chile and connects networks on the AURA observatory site in the Elqui Valley with the AURA Campus in La Serena, and on to Santiago where there is a connection point with the LSST international networks to the United States.
+REUNA will provide connections in Santiago from it’s non-LSST segments to LSST segments to La Serena. Thus, priority access is available to the LSST Chilean Data Access center in La Serena from any institution that has access to REUNA networks.
+
+REUNA also connects the LSST segments to the National Laboratory for High Performance Computing Center (NLHPC) at the University of Chile in Santiago.  Both REUNA and AURA are formal members of the NLHPC.  NLHPC has constructed a high-bandwidth ring in Santiago, managed by REUNA.  The LSST segments will be connected with the Santiago NLHPC ring, enabling high-throughput data transfers as well as high-quality connectivity.  AURA and REUNA will work with NLHPC to ensure a shared authorization and authentication service to provide for integrated access and services.  These connectivity elements will enable grid-based access from any REUNA-connected institution to the NLHPC.
+
+Leveraging AURA’s membership in Internet2, and REUNA as an Internet2 peer in Chile, LSST will transit internet2 traffic from Chilean astronomy institutions connected to REUNA to an internet2 peering point in North America.  Chilean astronomy internet2 traffic on the REUNA networks will be carried on the LSST international segments to Florida.  From there, the traffic will be directed to a US-based internet2 peering point.  The availability and bandwidth on the LSST international segments will be determined by treating the Chilean internet2 traffic as one of several priority groups.  When other higher priority traffic is present, the Chilean astronomy internet2 traffic will be remain in queue.  When there is no higher priority traffic, the Chilean astronomy internet2 traffic will be transited.  In this way, the Chilean internet2 traffic will be transferred on an “as available” basis.
+
+We shall measure the network performance and under nominal conditions we will ensure that Chilean academic priorities are met on the network. REUNA will manage the north south link hence we should be able to achieve this easily.  We must ensure with REUNA that traffic coming into USA also meets the NSF acceptable use policy for the NSF funded US network - there is no problem with academic traffic.
 
 
 \subsection{Data }
