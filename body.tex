@@ -1,66 +1,102 @@
 \section{Introduction}
 
 
-The Memo of understanding with Chile roughly defines a Data Access Center at the base facility in Chile.
-In this document we would like to begin to specify more precisely what this data access center would look like and
-the full range of services it will provide. This should be seen as an initial discussion document to allow the Chilean colleagues to collaborate with us to define the Chilean DAC.
+The Memo of understanding with Chile \citedsp{Document-11622} roughly defines a Data Access Center (DAC) at the base facility in Chile.
+In this document we would like to begin to specify more precisely what this Data Access Center would look like and the full range of services it will provide.
+This should be seen as an initial discussion document to allow our Chilean colleagues to collaborate with us to define the Chilean DAC.
 
 \section{The Chilean DAC}
 
-The Chilean DAC should be very similar to the US DAC at NCSA. We will deploy the  science platform in Chile as the interface to the system. The science platform is now well documented with the vision  given in \citeds{LSE-319}
-more formal requirements in \citeds{LDM-554} and the design in \citeds{LDM-542}.
+The Chilean DAC should be very similar to the US DAC at NCSA.
+We will deploy the LSST Science Platform (LSP) in Chile as the interface to the system.
+The LSP is now well documented with the vision given in \citeds{LSE-319}, with more formal requirements in \citeds{LDM-554} and the design in \citeds{LDM-542}.
 
-The DAC will require other software, some  hardware and of course data to function as a DAC. We go through these in the following sections.
+The DAC will require other software, some  hardware, and of course data to function as a DAC.
+We go through these in the following sections.
 
 
-\subsection{Software and Services }
-The components of the science platform: Portal, Access Services(DAX) and Notebooks (JupyterLab) will be deployed in Chile in the same manner as NCSA. Currently using Kubernetes to deploy Docker Containers.
-The platform gives access, through the notebook, to several versions of the LSST Software Stack allowing processing of image data etc. This interface will also allow users to spawn batch jobs,to process large amounts of data. such batch jobs will have to be written using the batch system used by LSST large processing.
+\subsection{Software and Services}
 
-The science platform allows users to upload files and images as well as store temporary results. It most be noted that users of the Chilean DAC will have access to the US DAC however the \emph{user data} is bound to the site where it was created.
+The components of the science platform: Portal, Data Access Services (DAX) and Notebooks (JupyterLab) will be deployed in Chile in the same manner as NCSA.
+Currently using Kubernetes to deploy Docker Containers.
+The platform gives access, through the notebook, to several versions of the LSST Software Stack allowing processing of image data and catalogs.
+This interface will also allow users to spawn batch jobs to process large amounts of data.
+Such batch jobs will have to be written using the batch system used by LSST large processing.
 
-All the regular security services etc will also be deployed in Chile as in NCSA. The entire system will be administered from NCSA in Illinois thus if new versions of software are deployed in Illinois they will also be deployed in Chile.
+The science platform allows users to upload files and images as well as store temporary results.
+It most be noted that users of the Chilean DAC will have access to the US DAC, however the \emph{user data} is bound to the site where it was created.
 
-In addition we will need to work together to get the authentication system of the Clean Grid integrated withe the DAC - thus we should be able to Authenticate users using Grid credentials furthermore we should be able to access grid resources from the DAC using the same credentials.
+All the regular security and other services will also be deployed in Chile as in NCSA.
+The entire system will be administered from NCSA in Illinois, thus if new versions of software are deployed in Illinois they will also be deployed in Chile.
+
+In addition we will need to work together to get the authentication system of the Chilean Grid integrated with the DAC -- thus we should be able to Authenticate users using Grid credentials, and furthermore we should be able to access Grid resources from the DAC using the same credentials.
 
 
 \subsection{Hardware and infrastructure}
-The Chilean MOU provides for a DAC which is 10\% of the size of the US DAC. The current DR2 US DAC is intended to comprise:
+
+The Chilean MOU provides for a DAC which is 10\% of the size of the US DAC.
+The current Data Release 2 US DAC is intended to comprise \citedsp{LDM-144}:
 \begin{itemize}
-\item Computing:2,400 cores ($\approx 18$ TFLOPs)
-\item File storage: $\approx 4 $PB  (VOSpace)
-\item Database storage: $\approx 3 $PB (MYDB)
+\item Computing: 2,400 cores ($\approx$ 18\,TFLOPs)
+\item File storage: $\approx$ 4\,PB  (VOSpace)
+\item Database storage: $\approx$ 3\,PB (MYDB)
 
 \end{itemize}
 
-Hence The Chilean DAC would at a minimum have:
+Hence the Chilean DAC would at a minimum have:
 \begin{itemize}
-\item Computing:2,40 cores ($\approx 1.8$ TFLOPs)
-\item File storage: $\approx 400 $TB  (VOSpace)
-\item Database storage: $\approx 300 $TB (MYDB)
+\item Computing: 240 cores ($\approx$ 1.8\,TFLOPs)
+\item File storage: $\approx$ 400\,TB  (VOSpace)
+\item Database storage: $\approx$ 300\,TB (MYDB)
 
 \end{itemize}
 
-In addition there would be disk to hold the RAW data and Catalogs.
+In addition there would be disk to hold the raw data and catalogs.
+
+\begin{draftnote}
+What about the coadds? Should the above sentence be removed given the existence of section \ref{sec:data}?
+\end{draftnote}
 
 \subsubsection{Networks}
-Access to he the DAC will of course require networks. Here we have done better than planned with 200 Gbps links.
-A priority scheme is being put in place to ensure availability of this network  for Chilean academic use, through our  \$7M USD investment in REUNA.
-REUNA (the Chilean Research and Educational Network, similar to Internet2 in the US) is our primary network operator in Chile and connects networks on the AURA observatory site in the Elqui Valley with the AURA Campus in La Serena, and on to Santiago where there is a connection point with the LSST international networks to the United States.
-REUNA will provide connections in Santiago for non-LSST segments and LSST segments to La Serena. Thus, priority access is available to the LSST Chilean Data Access center in La Serena from any institution that has access to REUNA networks.
 
-REUNA also connects the LSST segments to the National Laboratory for High Performance Computing Center (NLHPC) at the University of Chile in Santiago.  Both REUNA and AURA are formal members of the NLHPC.  NLHPC has constructed a high-bandwidth ring in Santiago, managed by REUNA.  The LSST segments will be connected with the Santiago NLHPC ring, enabling high-throughput data transfers as well as high-quality connectivity.  AURA and REUNA will work with NLHPC to ensure a shared authorization and authentication service to provide for integrated access and services.  These connectivity elements will enable grid-based access from any REUNA-connected institution to the NLHPC.
+Access to the DAC will of course require networks and we have done better than planned with a 200\,Gbps links.
+A priority scheme is being put in place to ensure availability of this network  for Chilean academic use, through our \$7M USD investment in REUNA.
+REUNA (the Chilean Research and Educational Network, similar to Internet2 in the US) is our primary network operator in Chile and connects networks on the AURA observatory site in the Elqui Valley with the AURA Campus in La Serena, and on to Santiago where there is a connection point with the LSST international networks to the United States \citedsp{LSE-78}.
+REUNA will provide connections in Santiago for non-LSST segments and LSST segments to La Serena.
+Thus, priority access is available to the LSST Chilean Data Access center in La Serena from any institution that has access to REUNA networks.
 
-Leveraging AURA’s membership in Internet2, and REUNA as an Internet2 peer in Chile, LSST will transit internet2 traffic from Chilean astronomy institutions connected to REUNA to an internet2 peering point in North America.  Chilean astronomy internet2 traffic on the REUNA networks will be carried on the LSST international segments to Florida.  From there, the traffic will be directed to a US-based internet2 peering point.  The availability and bandwidth on the LSST international segments will be determined by treating the Chilean internet2 traffic as one of several priority groups.  When other higher priority traffic is present, the Chilean astronomy internet2 traffic will be remain in queue.  When there is no higher priority traffic, the Chilean astronomy internet2 traffic will be transited.  In this way, the Chilean internet2 traffic will be transferred on an “as available” basis.
+REUNA also connects the LSST segments to the National Laboratory for High Performance Computing Center (NLHPC) at the University of Chile in Santiago.
+Both REUNA and AURA are formal members of the NLHPC.
+NLHPC has constructed a high-bandwidth ring in Santiago, managed by REUNA.
+The LSST segments will be connected with the Santiago NLHPC ring, enabling high-throughput data transfers as well as high-quality connectivity.
+AURA and REUNA will work with NLHPC to ensure a shared authorization and authentication service to provide for integrated access and services.
+These connectivity elements will enable grid-based access from any REUNA-connected institution to the NLHPC.
 
-We shall measure the network performance and under nominal conditions we will ensure that Chilean academic priorities are met on the network. REUNA will manage the north south link hence we should be able to achieve this easily.  We must ensure with REUNA that traffic coming into USA also meets the NSF acceptable use policy for the NSF funded US network - there is no problem with academic traffic.
+Leveraging AURA’s membership in Internet2, and REUNA as an Internet2 peer in Chile, LSST will transit Internet2 traffic from Chilean astronomy institutions connected to REUNA to an Internet2 peering point in North America.
+Chilean astronomy Internet2 traffic on the REUNA networks will be carried on the LSST international segments to Florida.
+From there, the traffic will be directed to a US-based Internet2 peering point.
+The availability and bandwidth on the LSST international segments will be determined by treating the Chilean Internet2 traffic as one of several priority groups.
+When other higher priority traffic is present, the Chilean astronomy Internet2 traffic will remain in a queue.
+When there is no higher priority traffic, the Chilean astronomy Internet2 traffic will be transited.
+In this way, the Chilean Internet2 traffic will be transferred on an ``as available'' basis.
+
+We shall measure the network performance and under nominal conditions we will ensure that Chilean academic priorities are met on the network.
+REUNA will manage the north/south link hence we should be able to achieve this easily.
+We must ensure with REUNA that traffic coming into USA also meets the NSF acceptable use policy for the NSF funded US network -- there is no problem with academic traffic.
 
 
-\subsection{Data }
+\subsection{Data}
+\label{sec:data}
 
 The raw data will be stored on disk at the base facility.
+
+\begin{draftnote}
+  Should we be referring to Table 1 in the text?
+\end{draftnote}
 
 \input{products}
 
 \section{Conclusion}
-We will put a useful scientific service in the base facility in Chile. This should enable local science activities and also provide seamless access to further resources at NCSA.
+
+We will put a useful scientific service in the base facility in Chile.
+This should enable local science activities and also provide seamless access to further resources at NCSA.
