@@ -17,14 +17,14 @@ We go through these in the following sections.
 
 \subsection{Software and Services}
 
-The components of the science platform: Portal, Data Access Services (DAX) and Notebooks (JupyterLab) will be deployed in Chile in the same manner as NCSA.
+The components of the science platform: Portal, Data Access Services (DAX) and Notebooks (JupyterLab) will be deployed in Chile in the same manner as at NCSA.
 Currently using Kubernetes to deploy Docker Containers.
 The platform gives access, through the notebook, to several versions of the LSST Software Stack allowing processing of image data and catalogs.
 This interface will also allow users to spawn batch jobs to process large amounts of data.
-Such batch jobs will have to be written using the batch system used by LSST large processing.
+Such batch jobs will have to be written using the installed batch system.
 
 The science platform allows users to upload files and images as well as store temporary results.
-It most be noted that users of the Chilean DAC will have access to the US DAC, however the \emph{user data} is bound to the site where it was created.
+It must be noted that users of the Chilean DAC will have access to the US DAC, however their \emph{user data} is bound to the site where it was created.
 
 All the regular security and other services will also be deployed in Chile as in NCSA.
 The entire system will be administered from NCSA in Illinois, thus if new versions of software are deployed in Illinois they will also be deployed in Chile.
@@ -39,7 +39,7 @@ The current Data Release 2 US DAC is intended to comprise \citedsp{LDM-144}:
 \begin{itemize}
 \item Computing: 2,400 cores ($\approx$ 18\,TFLOPs)
 \item File storage: $\approx$ 4\,PB  (VOSpace or equivalent)
-\item Database storage: $\approx$ 3\,PB (MYDB)
+\item Database storage: $\approx$ 3\,PB (user database workspace)
 
 \end{itemize}
 
@@ -47,7 +47,7 @@ Hence the Chilean DAC would at a minimum have:
 \begin{itemize}
 \item Computing: 240 cores ($\approx$ 1.8\,TFLOPs)
 \item File storage: $\approx$ 400\,TB  (VOSpace or equivalent)
-\item Database storage: $\approx$ 300\,TB (MYDB)
+\item Database storage: $\approx$ 300\,TB (user database workspace)
 
 \end{itemize}
 
