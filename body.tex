@@ -7,7 +7,7 @@ This should be seen as an initial discussion document to allow our Chilean colle
 \section{The Chilean DAC}
 
 The Chilean DAC should be very similar to the US DAC at NCSA.
-We will therefore deploy the LSST Science Platform (LSP) in Chile as the interface to the system, 
+We will therefore deploy the LSST Science Platform (LSP) in Chile as the interface to the system,
 just as we do for the US DAC.
 The LSP is now well documented with the vision given in \citeds{LSE-319}, with more formal requirements in \citeds{LDM-554} and the design in \citeds{LDM-542}.
 
@@ -35,7 +35,7 @@ In addition we will need to work together to get the authentication system of th
 \subsection{Hardware and infrastructure}\label{sec:hw}
 
 The Chilean MOU provides for a DAC which is 10\% of the size of the US DAC.
-The current Data Release 2\footnote{Data Release 2 is used as a reference because the compute and storage resources required to support it are covered by the MREFC construction budget.} The user computing resources at the US DAC are intended to comprise \citedsp{LDM-144}:
+The Data Release 2\footnote{Data Release 2 is used as a reference because the compute and storage resources required to support it are covered by the MREFC construction budget.} user computing resources at the US DAC are currently intended to comprise \citedsp{LDM-144}:
 \begin{itemize}
 \item Computing: 2,400 cores ($\approx$ 18\,TFLOPs)
 \item File storage: $\approx$ 4\,PB  (user file workspace: VOSpace or equivalent)
@@ -87,7 +87,7 @@ We must ensure with REUNA that traffic coming into USA also meets the NSF accept
 \label{sec:data}
 
 The LSST raw data and data products, both nightly and from Data Releases, will be stored on disk at the Base Facility.
-The types of data and modes of access are indicated in \tabref{tab:prods}. 
+The types of data and modes of access are indicated in \tabref{tab:prods}.
 The table includes ``virtual data products'' which are recreated on demand rather than retained in persisted form.
 The storage and other resources required to support the released data products is in addition to the user workspace resources described above in \secref{sec:hw}.
 
