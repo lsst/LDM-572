@@ -10,12 +10,10 @@ before_install:
 script:
   # Compile PDF using containerized lsst-texmf
   - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make'"
-after_success:
   # Deploy website. See https://github.com/lsst-sqre/lander for CLI options
-  - "lander --pdf LDM-572.pdf --upload --lsstdoc LDM-572.tex --env=travis --ltd-product $PRODUCT"
+  - "lander --pdf LDM-572.pdf --upload --lsstdoc LDM-572.tex --env=travis --ltd-product ldm-572"
 env:
   global:
-    - PRODUCT="LDM-572"
     # LSST the Docs credentials
     - secure: "eM4kWaZfdA6a+Y7cK4a01EzlYfa4tpXyw9krvgpBHxbU8trW1OndHUC4orXnf83GDT6VzSyIf+MR5GPvxJIRMGqzB/cOg+J9Cr5w7ihnFtIhzBOtabOYjpE8zNRMmZWnsgZqPUNDXNRY4sOLYTXzWRIvmm/c8z2Zu90qHK6KGFv84M0r49fnEQlRf69On+2jpAFQZOUmPdHmL+0sIlQI4uoekq7DJ5Qzut2f/U3zoFvbxR5FZWUqyMf5cw7rJTND61ShZjAH/a7dnu2gpupEEMptTqoeBN/PqH7RmIQ+IylTVWkunJSFY4115q1TZhYBSqFB9bAvGYRGTES158Yz2dSk0voN27YFqkb4hkO2YYMB6msykyaMfciwnWVRcJuxO9Kopv17xbkyNFMGGy/GyrYy2gwYZMz45URr+LvSO6MsS8FD7YCfGP8dMsklHWZpHN3LZKmvsWyOQDfMAF19CB9hxm3SOIL03BMdVqs6KDqFB2Ujf9WJumdqN3Dkmy9c5U25MZIZn3IlmMFkxPjqXKtK+IFpysllscMmwakWeMd+bVTdBNPXpJRWapsU4/sqLAjAIGgMXhz6P3lw2cXMsE0BLWwXRhA/pFxXbTYsUatQRo4U6g/Q/JE+TIZRZsTQrTxl3A1kTvbvRWMu+YkoDiSYl8Y1zRQ6/bCsZE7GtqQ="
     - secure: "k+lq4360Htvwbd8bkLxONZpoLoEKBbLJBmU1J2hZtJFQhEqsx1kvEaufTwj0aNNVIJW/cwzyR7alYGlpREuJEzETl3jaOe4tWDLfkV4K3NebFVXw4OHpQEEfQBb3kRVOZUPylgoo/bE37MELi2PvfPfC7FfymYebaeeQX/pgi4M58oCRV5BkMNTXym0nSjr1OEovROzvauSDaYb+hUkViUt5KngG7om5CCk5v5ioB+IHMHtxabvSblTSCEvlbX3KbUR73I1KxrYA8zjxFgbBndZ8sipNFNF6kv7G0SpFMbhLrz81kQ787ZomIngf/yo9RyPb1DZ7uiRnX4vixFeySP916cpnbAb5lrbU5cKkOwC4hqhI24vs6xtaA3tA1uK9+uChC7762c6Uqx4ciEjFeTr4e6k/riO+fzEU3FIscSNfG6ewtbfcs7tnhJmlX93Paa/BmCgfNB+5FOis4UTpCF+NL0gj9c9oMkFxINTpRw588aA1W4TwMT6rCU0woxauXS5xfpmhX0RuRee40/L4Gw4+lleuLCNDEzt1h2jHQEqs3P8A4o4eECfvDZ35ydgd7zVr072jogiursHMbN7Ur9Z4X2zpPuo/JljL6yj3vPwis9VyvpnUR4rG/lgV/VfO+coc5FYoceMA3BmmQ1D5zfoxRwBWqsd2TZWtZYzYQGg="
