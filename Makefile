@@ -14,5 +14,5 @@ clean :
 	rm *.pdf
 
 acronyms.tex :$(TEX) myacronyms.txt
-	generateAcronyms.py  -g -t "DM Gen"  $(TEX)
+	generateAcronyms.py  -t "DM Gen"  $(TEX)
 
