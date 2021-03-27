@@ -6,8 +6,8 @@ This should be seen as an initial discussion document to allow our Chilean colle
 
 \section{The Chilean DAC}
 
-The Chilean DAC should be very similar to the US DAC at NCSA.
-We will therefore deploy the LSST Science Platform (LSP) in Chile as the interface to the system,
+The Chilean DAC should be very similar to the US DAC at SLAC.
+We will therefore deploy the Rubin  Science Platform (RSP) in Chile as the interface to the system,
 just as we do for the US DAC.
 The LSP is now well documented with the vision given in \citeds{LSE-319}, with more formal requirements in \citeds{LDM-554} and the design in \citeds{LDM-542}.
 
@@ -24,7 +24,7 @@ This interface will also allow users to spawn batch jobs to process large amount
 Such batch jobs will have to be written using the installed batch system.
 
 The Science Platform provides a ``user workspace'' which allows users to upload images and other files, and to create databases, as well as store temporary results.
-While users of the Chilean DAC will have access to the US DAC, \emph{user workspace data} is bound to the site where it was created.\footnote{The user workspaces at the two DACs will be accessible via the Internet via VOSpace and the DAX Web services, but with reduced performance compared to their local use within each DAC.}
+While users of the Chilean DAC will have access to the US DAC, \emph{user workspace data} is bound to the site where it was created.\footnote{The user workspace at the two DACs will be accessible via the Internet via VOSpace and the DAX Web services, but with reduced performance compared to their local use within each DAC.}
 
 All the regular security and other services will also be deployed in Chile as in NCSA.
 The entire system will be administered from NCSA in Illinois; thus, if new versions of software are deployed in Illinois, they will also be deployed in Chile.
@@ -35,21 +35,23 @@ In addition we will need to work together to get the authentication system of th
 \subsection{Hardware and infrastructure}\label{sec:hw}
 
 The Chilean MOU provides for a DAC which is 10\% of the size of the US DAC.
-The Data Release 2\footnote{Data Release 2 is used as a reference because the compute and storage resources required to support it are covered by the MREFC construction budget.} user computing resources at the US DAC are currently intended to comprise \citedsp{LDM-144}:
+The Data Release 2\footnote{Data Release 2 is used as a reference because the compute and storage resources required to support it are covered by the MREFC construction budget.} user computing resources at the US DAC are currently intended to comprise \citedsp{DMTN-135}:
 \begin{itemize}
 \item Computing: 2,400 cores ($\approx$ 18\,TFLOPs)
 \item File storage: $\approx$ 4\,PB  (user file workspace: VOSpace or equivalent)
 \item Database storage: $\approx$ 3\,PB (user database workspace)
-
 \end{itemize}
+
 
 Hence the Chilean DAC would at a minimum have:
 \begin{itemize}
 \item Computing: 240 cores ($\approx$ 1.8\,TFLOPs)
 \item File storage: $\approx$ 400\,TB  (user file workspace: VOSpace or equivalent)
 \item Database storage: $\approx$ 300\,TB (user database workspace)
-
 \end{itemize}
+
+This raises an immediate problem - 10\% of the data base is not very useful unless we bring only the Object catalog.
+We shall discuss further in  \secref{sec:prop}.
 
 In addition see \secref{sec:data}.
 There will be additional computing capacity as required to support the operation of the Data Access services themselves as well as the Portal.
@@ -93,6 +95,21 @@ The storage and other resources required to support the released data products a
 
 
 \input{products}
+
+\section{Proposal for the Chilean DAC}\label{sec:prop}
+
+In the operations proposal \citedsp{LDO-31} we included funding for the Chilean DAC along the lines of \tabref{tab:opsSumChileR}.
+
+\input{dmtn-135/opsChileR}.
+
+This is based on providing storage and compute above the level discussed in \secref{sec:hw}.
+The total storage and compute is shown in \tabref{tab:chileDac}. The cost is based on Rome processors.
+\input{dmtn-135/chileDac}.
+
+This does not include storage and compute for Qserv which is quite expensive. There is enough storage for images and potentially parquet catalogs. The best use fo the the storage should be further dicussed - i.e. some sort of cahcing of image files may be more usefull than trying to have all of any specific data set.
+
+
+
 
 \section{Conclusion}
 
