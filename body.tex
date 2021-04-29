@@ -103,12 +103,12 @@ The storage and other resources required to support the released data products a
 
 In the operations proposal \citedsp{LDO-31} we included funding for the Chilean DAC of the order \$13M over the operations.
 
-This is based on providing storage and compute above the level discussed in \secref{sec:hw}.
+This is based on providing storage and compute above the level discussed in \secref{sec:hw}, sufficient to store raws and CoAdds.
 The total storage and compute is shown in \tabref{tab:chileDac}. The cost is based on Rome processors.
 \input{dmtn-135/chileDac}
 
 This does not include storage and compute for Qserv, queries to Qserv would be serviced via the USDF.
-There is enough storage for raw images, LSSTCam coadds and some other images or catalogs but not everything.
+There is enough storage for raw images, LSSTCam CoAdds and some other images or catalogs but not everything.
 The baseline, which may be discussed, is to store the raw images in the DAC.
 The best use of the storage should be further discussed - i.e. some sort of caching of image files may be more useful than trying to have all of any specific data set.
 The object store backed butler would in effect make access to images in USDF fairly seamless.
