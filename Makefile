@@ -2,17 +2,17 @@
 #
 
 SRC=$(wildcard LDM-*.tex)
-tex=$(SRC) body.tex  products.tex
+TEX=$(SRC) body.tex  products.tex
 
 OBJ=$(SRC:.tex=.pdf)
 
-all: $(tex)
+all: $(TEX)
 	latexmk -bibtex -xelatex -f $(SRC)
 
 clean :
 	latexmk -c
 	rm *.pdf
 
-acronyms.tex :$(tex) myacronyms.tex
-	acronyms.csh  $(tex)
+acronyms.tex :$(TEX) myacronyms.txt
+	generateAcronyms.py  -t "DM Gen"  $(TEX)
 
