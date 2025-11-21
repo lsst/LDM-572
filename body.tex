@@ -2,34 +2,40 @@
 
 The Memorandum of Understanding with Chile \citedsp{Document-11622} roughly defines a Data Access Center (DAC) at the Base Facility in Chile.
 In this document we would like to begin to specify more precisely what this Data Access Center would look like and the full range of services it will provide.
-This should be seen as an initial discussion document to allow our Chilean colleagues to collaborate with us to define the Chilean DAC.
+This should be seen as a discussion document to allow our Chilean colleagues to collaborate with us to define the Chilean DAC.
 
 \section{The Chilean DAC}
 
-The Chilean DAC should be very similar to the US DAC at SLAC.
-We will therefore deploy the Rubin  Science Platform (RSP) in Chile as the interface to the system,
-just as we do for the US DAC.
-The LSP is now well documented with the vision given in \citeds{LSE-319}, with more formal requirements in \citeds{LDM-554} and the design in \citeds{LDM-542}.
+Initially the thought was that the Chilean DAC should be very similar to the US DAC at SLAC.
+However we now have a hybrid US DAC \cite{DMTN-287}.
+It is unclear what the Google analogy would be in a Chile DAC,
+could deploy the Rubin  Science Platform (RSP) in Chile as the interface to the system,
+but the google RSP will prbalby be more functional and more availble.
 
-The DAC will require other software, some  hardware, and of course data to function as a DAC.
+It may be moe interesting to make the CHile DAC more a compute facility with HTCondor access to Data.
+
+THere was mention of interest in a copy or rapid acces to the Prompt Product Database (PPDB).
+That remains under development and was not considered for replication though there seems to be interest in that.
+
+
+The DAC will require  software, some  hardware, and of course data to function as a DAC.
 We go through these in the following sections.
 
 
 \subsection{Software and Services}
 
-The components (``Aspects'') of the Science Platform: Portal, Data Access Services (DAX), and Notebooks (JupyterLab) will be deployed in Chile in the same manner as at NCSA.
-The baseline design is to use Kubernetes to deploy Docker containers, an approach we are currently using in our prototype systems.
-The Platform gives access, through the Notebook Aspect, to several versions of the LSST Software Stack allowing processing of image data and catalogs.
-This interface will also allow users to spawn batch jobs to process large amounts of data.
-Such batch jobs will have to be written using the installed batch system.
+Deployment of the Science Platform in Chile is a potential overhead for maintenance to keep up with the Google deployment.
+We may decide this is the correct approach but a conversation is need to make the tradeoff with RSP access on Google directly.
+The Science Platform gives access, through the Notebook Aspect, to several versions of the LSST Software Stack allowing processing of image data and catalogs.
+If the RSP is not deployed we would  have to handle local accoutns in the DAC and provide continer builds to run pipelines via e.g CernVFMS as is doen in USDF.
+This would be making the Chile DAC a batch access site as in \citeds{DMTN-223}
 
-The Science Platform provides a ``user workspace'' which allows users to upload images and other files, and to create databases, as well as store temporary results.
-While users of the Chilean DAC will have access to the US DAC, \emph{user workspace data} is bound to the site where it was created.\footnote{The user workspace at the two DACs will be accessible via the Internet via VOSpace and the DAX Web services, but with reduced performance compared to their local use within each DAC.}
 
-All the regular security and other services will also be deployed in Chile as in NCSA.
-The entire system will be administered from NCSA in Illinois; thus, if new versions of software are deployed in Illinois, they will also be deployed in Chile.
+While users of the Chilean DAC will have access to the US DAC, \emph{user workspace data} is bound to the site where it was created.
 
-In addition we will need to work together to get the authentication system of the Chilean Grid integrated with the LSST system \citedsp{LSE-279} -- thus we should be able to authenticate users using Grid credentials, and furthermore we should be able to access Grid resources from the DAC using the same credentials.
+The Chile DAC will be administered  By Rubin's Chile DevOPs team any support from Chile community woudl be welcom as the DevOps team is underresourced (as of 2025).
+
+We will need to work together to get the authentication system of the Chilean Grid integrated with the LSST system \citedsp{LSE-279} -- thus we should be able to authenticate users using Grid credentials, and furthermore we should be able to access Grid resources from the DAC using the same credentials. This may be a heavy lift.
 
 
 \subsection{Hardware and infrastructure}\label{sec:hw}
