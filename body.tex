@@ -9,33 +9,40 @@ This should be seen as a discussion document to allow our Chilean colleagues to 
 Initially the thought was that the Chilean DAC should be very similar to the US DAC at SLAC.
 However we now have a hybrid US DAC \cite{DMTN-287}.
 It is unclear what the Google analogy would be in a Chile DAC,
-could deploy the Rubin  Science Platform (RSP) in Chile as the interface to the system,
-but the google RSP will prbalby be more functional and more availble.
+We could deploy the Rubin  Science Platform (RSP) in Chile as the interface to the system,
+but the google RSP will probably be more functional and more available.
 
-It may be moe interesting to make the CHile DAC more a compute facility with HTCondor access to Data.
+It was considered more interesting to make the Chile DAC more a compute facility with HTCondor access to Data.
 
-THere was mention of interest in a copy or rapid acces to the Prompt Product Database (PPDB).
-That remains under development and was not considered for replication though there seems to be interest in that.
+There was mention of interest in a copy or rapid access to the Prompt Product Database (PPDB).
+That remains under development and was not originally considered for replication though there seems to be interest in that.
 
+In 2026 a Chile DAC implementation committee was setup.
+This committee will discuss and agree the various purchases for the Chile DAC.
+In the first interactions an interesting in GPU was expressed.
 
 The DAC will require  software, some  hardware, and of course data to function as a DAC.
 We go through these in the following sections.
-
 
 \subsection{Software and Services}
 
 Deployment of the Science Platform in Chile is a potential overhead for maintenance to keep up with the Google deployment.
 We may decide this is the correct approach but a conversation is need to make the tradeoff with RSP access on Google directly.
 The Science Platform gives access, through the Notebook Aspect, to several versions of the LSST Software Stack allowing processing of image data and catalogs.
-If the RSP is not deployed we would  have to handle local accoutns in the DAC and provide continer builds to run pipelines via e.g CernVFMS as is doen in USDF.
+If the RSP is not deployed we would  have to handle local accounts in the DAC and provide container builds to run pipelines via e.g CernVMFS as is done in USDF.
 This would be making the Chile DAC a batch access site as in \citeds{DMTN-223}
 
 
 While users of the Chilean DAC will have access to the US DAC, \emph{user workspace data} is bound to the site where it was created.
 
-The Chile DAC will be administered  By Rubin's Chile DevOPs team any support from Chile community woudl be welcom as the DevOps team is underresourced (as of 2025).
+The Chile DAC will be administered  By Rubin's Chile DevOps team any support from Chile community would be welcome as the DevOps team is under resourced (as of 2025).
 
-We will need to work together to get the authentication system of the Chilean Grid integrated with the LSST system \citedsp{LSE-279} -- thus we should be able to authenticate users using Grid credentials, and furthermore we should be able to access Grid resources from the DAC using the same credentials. This may be a heavy lift.
+We will need to work together to get the authentication system of the Chilean Grid integrated with the LSST system \citedsp{LSE-279} -- thus we should be able to authenticate users using Grid credentials, and furthermore we should be able to access Grid resources from the DAC using the same credentials.
+This may be a heavy lift.
+We have discussed with the Chile community creating individual accounts fo rusers agreed with the implementation comitee.
+This may be simpler.
+
+In anycase users will need a VPN to access the Chile DAC and part of the 2026 purchase was for VPN licenes for DAC users.
 
 
 \subsection{Hardware and infrastructure}\label{sec:hw}
@@ -102,6 +109,7 @@ The types of data and modes of access are indicated in \tabref{tab:prods}.
 The table includes ``virtual data products'' which are recreated on demand rather than retained in persisted form.
 The storage and other resources required to support the released data products are in addition to the user workspace resources described above in \secref{sec:hw}.
 
+We can experiment with DP2 to see which products are most useful at the Chilean DAC.
 
 \input{products}
 
