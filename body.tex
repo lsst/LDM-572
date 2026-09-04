@@ -25,30 +25,42 @@ The DAC will require  software, some  hardware, and of course data to function a
 We go through these in the following sections.
 
 \subsection{Software and Services}
+The Chile DAC will be administered  by Rubin's Chile DevOps team, any support from Chile community would be welcome as the DevOps team is under resourced (as of 2025).
 
+\subsubsection{Accounts and Access }
+Users will need a VPN to access the Chile DAC.
+The 2026 purchase includes OpenVPN licenses for DAC users.
+The VPN will require local accounts for each user with appropriate access controls via IPA.
+
+Since we have to create these accounts anyway granting access to the DAC with them will be more straight forward than
+connecting to the Chile grid for authentication.
+This will require lodging ssh keys with IPA and setting up 2FA.
+We have discussed with the Chile community creating individual accounts for users there is no issue with this for now.
+
+If we still wish to get the authentication system of the Chilean Grid integrated with the Chile DAC system \citedsp{LSE-279}
+we will need to work with the Chile community.
+There is a use case to  able to access Grid resources from the DAC using the same credentials, however users usually also know
+how to use different credentials across systems fairly seamlessly.
+This may be a heavy lift.
+
+\subsubsection{Science Platform}
 Deployment of the Science Platform in Chile is a potential overhead for maintenance to keep up with the Google deployment.
 We may decide this is the correct approach but a conversation is need to make the tradeoff with RSP access on Google directly.
 The Science Platform gives access, through the Notebook Aspect, to several versions of the LSST Software Stack allowing processing of image data and catalogs.
 If the RSP is not deployed we would  have to handle local accounts in the DAC and provide container builds to run pipelines via e.g CernVMFS as is done in USDF.
 This would be making the Chile DAC a batch access site as in \citeds{DMTN-223}
 
-
 While users of the Chilean DAC will have access to the US DAC, \emph{user workspace data} is bound to the site where it was created.
+Any data transfer would have to be done with e.g.  sftp.
 
-The Chile DAC will be administered  By Rubin's Chile DevOps team any support from Chile community would be welcome as the DevOps team is under resourced (as of 2025).
 
-We will need to work together to get the authentication system of the Chilean Grid integrated with the LSST system \citedsp{LSE-279} -- thus we should be able to authenticate users using Grid credentials, and furthermore we should be able to access Grid resources from the DAC using the same credentials.
-This may be a heavy lift.
-We have discussed with the Chile community creating individual accounts fo rusers agreed with the implementation comitee.
-This may be simpler.
 
-In anycase users will need a VPN to access the Chile DAC and part of the 2026 purchase was for VPN licenes for DAC users.
 
 
 \subsection{Hardware and infrastructure}\label{sec:hw}
 
 The Chilean MOU provides for a DAC which is 10\% of the size of the US DAC.
-The Data Release 2\footnote{Data Release 2 is used as a reference because the compute and storage resources required to support it are covered by the MREFC construction budget.} user computing resources at the US DAC are currently intended to comprise \citedsp{DMTN-135}:
+The Data Release 2\footnote{Data Release 2 was used as a reference because the compute and storage resources required to support it were covered by the MREFC construction budget. Since the move to SLAC, this is no longer the case.} user computing resources at the US DAC are currently intended to comprise \citedsp{DMTN-135}:
 \begin{itemize}
 \item Computing: 2,400 cores ($\approx$ 18\,TFLOPs)
 \item File storage: $\approx$ 4\,PB  (user file workspace: VOSpace or equivalent)
@@ -68,6 +80,15 @@ We shall discuss further in  \secref{sec:prop}.
 
 In addition see \secref{sec:data}.
 There will be additional computing capacity as required to support the operation of the Data Access services themselves as well as the Portal.
+
+\subsubsection {2025 and 2026 purchases}
+In 2025 we already purchased some nodes but did not manage to rack them until 2026.
+The 2025 purchases were made with minimal Chile community input due to the expediency needed to get the orders in.
+The 2026 purchase was iterated with the implementation committee which introduced e.g. GPUs over storage.
+
+The current situation is listed in \tabref{tab:chileDAC} and already far exceeds the original estimates.
+
+\input{chileDAC}
 
 
 \subsubsection{Networks}
@@ -135,6 +156,6 @@ There was also some discussion of a Chilean Data Cloud project. We should see if
 
 \section{Conclusion}
 
-We will put a useful scientific archive and data analysis service in the Base Facility in Chile.
+We have started to put hardware in La Serena that will result in a useful scientific archive and data analysis service in the Base Facility in Chile.
 This should enable local science activities and also provide seamless access to further resources at the USDF.
-Discussion with the local community should be initiated near the start of operations to decide on the best way to set this up.
+Discussion with the local community is on going and with the implementation committee in place as of 2025 we are in regular contact.
