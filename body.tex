@@ -32,6 +32,8 @@ Users will need a VPN to access the Chile DAC.
 The 2026 purchase includes OpenVPN licenses for DAC users.
 The VPN will require local accounts for each user with appropriate access controls via IPA.
 
+During the FY26 purchasing cycle, we acquired licenses for 50 concurrent VPN users; however, the committee estimates actual concurrent usage will be closer to 20 users.
+
 Since we have to create these accounts anyway granting access to the DAC with them will be more straight forward than
 connecting to the Chile grid for authentication.
 This will require lodging ssh keys with IPA and setting up 2FA.
@@ -93,7 +95,8 @@ These numbers also must include some labor to look after machines.
 \subsubsection {2025 and 2026 purchases}
 In 2025 we already purchased some nodes but did not manage to rack them until 2026.
 The 2025 purchases were made with minimal Chile community input due to the expediency needed to get the orders in.
-The 2026 purchase was iterated with the implementation committee which introduced e.g. GPUs over storage.
+
+While the committee endorsed the FY25 purchasing cycle, they recommended consulting them on subsequent purchases. Accordingly, the FY26 purchasing cycle was reviewed with the implementation committee, which introduced changes such as prioritizing GPUs over storage
 
 The current situation is listed in \tabref{tab:chileDAC} and already far exceeds the original estimates.
 
@@ -102,34 +105,15 @@ The current situation is listed in \tabref{tab:chileDAC} and already far exceeds
 
 \subsubsection{Networks}
 
-Access to the DAC will of course require networks and we have done better than planned with a 100\,Gbps primary and 40\,Gbps secondary links.
-A priority scheme is being put in place to ensure availability of this network  for Chilean academic use, through our \$7M USD investment in REUNA.
-The general notion is to provide 10\,Gbps to the community in Chile from the backup link when it is available (i.e. primary is functioning).
-Should Rubin need th backup link the 10\,Gbps would be as available with our traffic getting priority.
+Access to the DAC will require network connectivity, and there are currently two possible ways to provide it.
 
-REUNA (the Chilean Research and Educational Network, similar to Internet2 in the US) is our primary network operator in Chile and connects networks on the AURA observatory site in the Elqui Valley with the AURA Campus in La Serena, and on to Santiago where there is a connection point with the LSST international networks to the United States \citedsp{LSE-78}.
-REUNA will provide connections in Santiago for non-LSST segments and LSST segments to La Serena.
-Thus, priority access is available to the LSST Chilean Data Access center in La Serena from any institution that has access to REUNA networks.
+The most direct option is to use the existing 10 Gbps Internet connection provided through NoirLab. This would require only minor network changes and could be made available relatively quickly, allowing DAC access to be enabled without depending on changes to the Rubin long-haul network (LHN).
 
-REUNA also connects the LSST segments to the National Laboratory for High Performance Computing Center (NLHPC) at the University of Chile in Santiago.
-Both REUNA and AURA are formal members of the NLHPC.
-NLHPC has constructed a high-bandwidth ring in Santiago, managed by REUNA.
-The LSST segments will be connected with the Santiago NLHPC ring, enabling high-throughput data transfers as well as high-quality connectivity.
-AURA and REUNA will work with NLHPC to ensure a shared authorization and authentication service to provide for integrated access and services.
-These connectivity elements will enable grid-based access from any REUNA-connected institution to the NLHPC.
+A second option is to use capacity from the 40 Gbps backup link operated in coordination with REUNA. This could provide higher bandwidth for the Chilean community, but it would require more substantial network changes, including additional hardware such as a firewall, changes to the current routing configuration, and coordination with REUNA to enable and manage this traffic. 
 
-Leveraging AURA’s membership in Internet2, and REUNA as an Internet2 peer in Chile, LSST will transit Internet2 traffic from Chilean astronomy institutions connected to REUNA to an Internet2 peering point in North America.
-Chilean astronomy Internet2 traffic on the REUNA networks will be carried on the LSST international segments to Florida.
-From there, the traffic will be directed to a US-based Internet2 peering point.
-The availability and bandwidth on the LSST international segments will be determined by treating the Chilean Internet2 traffic as one of several priority groups.
-When other higher priority traffic is present, the Chilean astronomy Internet2 traffic will remain in a queue.
-When there is no higher priority traffic, the Chilean astronomy Internet2 traffic will be transited.
-In this way, the Chilean Internet2 traffic will be transferred on an ``as available'' basis.
+The bandwidth available through this link would be managed using a priority scheme, with DAC traffic treated as one of several traffic classes. When higher-priority traffic is present, DAC traffic may be limited or queued. When capacity is available, DAC traffic would be transmitted on an “as available” basis. Implementing this option as part of the initial DAC deployment would therefore substantially delay its availability.
 
-We shall measure the network performance and under nominal conditions we will ensure that Chilean academic priorities are met on the network.
-REUNA will manage the north/south link hence we should be able to achieve this easily.
-We must ensure with REUNA that traffic coming into USA also meets the NSF acceptable use policy for the NSF funded US network -- there is no problem with academic traffic.
-
+For this reason, the current approach is to provide DAC access through the 10 Gbps Internet connection, while continuing to evaluate and prepare the use of the 40 Gbps backup link as a future higher-bandwidth option, if this is the direction the community wishes to pursue. 
 
 \subsection{Data}
 \label{sec:data}
