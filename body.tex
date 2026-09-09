@@ -32,7 +32,7 @@ Users will need a VPN to access the Chile DAC.
 The 2026 purchase includes OpenVPN licenses for DAC users.
 The VPN will require local accounts for each user with appropriate access controls via IPA.
 
-During the FY26 purchasing cycle, we acquired licenses for 50 concurrent VPN users; however, the committee estimates actual concurrent usage will be closer to 20 users.
+During the FY26 purchasing cycle, we acquired licenses for 50 concurrent VPN users; the committee estimates actual concurrent usage will be closer to 20 users but we decided on some margin.
 
 Since we have to create these accounts anyway granting access to the DAC with them will be more straight forward than
 connecting to the Chile grid for authentication.
@@ -83,12 +83,16 @@ We shall discuss further in  \secref{sec:prop}.
 In addition see \secref{sec:data}.
 There will be additional computing capacity as required to support the operation of the Data Access services themselves as well as the Portal.
 
-In the operations proposal \citedsp{LDO-31} we included funding for the Chilean DAC of the order \$10M over the operations.
-This is repeated here in \tabref{tab:chileBudget}, bearing in mind this is a proposal and funding is not guaranteed.
-In this table the budget has been year shifted to match reality (original numbers start in 2025) so it doe not match the table later in this document nor in \cite{DMTN-135}.
-A little more than the 2026 figure was spent in 2025 and 2026 to get the DAC started so we may have to reduce this later.
-These numbers also must include some labor to look after machines.
-\input{chileBudget}
+In the operations proposal \citedsp{LDO-31} we included funding for the Chilean DAC over the operations lifetime.
+%This is repeated here in \tabref{tab:chileBudget},
+We must keep  in mind this is a proposal and funding is not guaranteed.
+
+This budget would also have to cover some labor to look after machines.
+
+%#In this table the budget has been year shifted to match reality (original numbers start in 2025) so it doe not match the table later in this document nor in \cite{DMTN-135}.
+%A little more than the 2026 figure was spent in 2025 and 2026 to get the DAC started so we may have to reduce this later.
+
+%\input{chileBudget}
 
 
 
@@ -107,13 +111,13 @@ The current situation is listed in \tabref{tab:chileDAC} and already far exceeds
 
 Access to the DAC will require network connectivity, and there are currently two possible ways to provide it.
 
-The most direct option is to use the existing 10 Gbps Internet connection provided through NoirLab. This would require only minor network changes and could be made available relatively quickly, allowing DAC access to be enabled without depending on changes to the Rubin long-haul network (LHN).
+The most direct option is to use the existing 10 Gbps Internet connection provided through NOIRLab. This would require only minor network changes and could be made available relatively quickly, allowing DAC access to be enabled without depending on changes to the Rubin long-haul network (LHN).
 
-A second option is to use capacity from the 40 Gbps backup link operated in coordination with REUNA. This could provide higher bandwidth for the Chilean community, but it would require more substantial network changes, including additional hardware such as a firewall, changes to the current routing configuration, and coordination with REUNA to enable and manage this traffic. 
+A second option is to use capacity from the 40 Gbps backup link operated in coordination with REUNA. This could provide higher bandwidth for the Chilean community, but it would require more substantial network changes, including additional hardware such as a firewall, changes to the current routing configuration, and coordination with REUNA to enable and manage this traffic.
 
 The bandwidth available through this link would be managed using a priority scheme, with DAC traffic treated as one of several traffic classes. When higher-priority traffic is present, DAC traffic may be limited or queued. When capacity is available, DAC traffic would be transmitted on an “as available” basis. Implementing this option as part of the initial DAC deployment would therefore substantially delay its availability.
 
-For this reason, the current approach is to provide DAC access through the 10 Gbps Internet connection, while continuing to evaluate and prepare the use of the 40 Gbps backup link as a future higher-bandwidth option, if this is the direction the community wishes to pursue. 
+For this reason, the current approach is to provide DAC access through the 10 Gbps Internet connection, while continuing to evaluate and prepare the use of the 40 Gbps backup link as a future higher-bandwidth option, if this is the direction the community wishes to pursue.
 
 \subsection{Data}
 \label{sec:data}
@@ -132,6 +136,7 @@ We can experiment with DP2 to see which products are most useful at the Chilean 
 
 This is based on providing storage and compute above the level discussed in \secref{sec:hw}, sufficient to store raws and CoAdds.
 The total storage and compute is shown in \tabref{tab:chileDac}. The cost is based on Rome processors.
+
 \input{dmtn-135/chileDac}
 
 This does not include storage and compute for Qserv, queries to Qserv would be serviced via the USDF.
