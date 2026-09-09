@@ -1,25 +1,22 @@
 \tiny \begin{longtable} {|l |p{0.7\textwidth} |r  |} \caption{This table lists the current/proposed nodes in the DAC - 2026 nodes are ordered using the FY27 budget. \label{tab:chileDAC}}\\ 
 \hline 
 \textbf{Category}&\textbf{Hardware}&\textbf{Count} \\ \hline
-{Network}&{2x100G+1xIPMI switches(GPU cluster);}&{1} \\ \hline
-{Latent storage}&{Storage nodes (24 × 20 TB disks, 192 GB RAM, 10/25G NIC)}&{8} \\ \hline
-{Fast storage}&{fast storage nodes (30 TB NVMe data disk, 384 GB RAM, 2 × 100G)}&{12} \\ \hline
-{Compute}&{processing nodes (dual-64core, 384 GB RAM, 30 TB NVMe data disk, 2 × 25G)}&{6} \\ \hline
-{GPU1}&{GPU node (8 × RTX PRO 6000, 1 TB RAM, 32 TB fast storage, 100G nic)}&{1} \\ \hline
-{GPU2}&{1 × H200/NVLink-capable server, initially populated with 2 H200 GPUs - for different workloads to GPU1. 100G Nic}&{1} \\ \hline
+{Network}&{100Gb Switches}&{2} \\ \hline
+{Latent storage}&{AMD EPYC 9135 5th Gen Dual 16-Cores ~500TB per node - 192 GB RAM - 10Gb interface}&{8} \\ \hline
+{Fast storage}&{AMD EPYC ZEN4 9535 Dual 64-Cores - 30TB per node - 384 GB RAM - 100Gb interface}&{12} \\ \hline
+{Compute}&{AMD EPYC ZEN4 9535 Dual 64-Cores  - 384 GB RAM - 25Gb interface}&{6} \\ \hline
+{GPU1}&{8 × RTX PRO 6000 - 1TB Ram - 32TB - 100Gb interface}&{1} \\ \hline
+{GPU2}&{8 × H200/NVLink-capable server - 1TB Ram - 32TB - 100Gb interface}&{1} \\ \hline
 {vpn}&{OpenVPN License}&{50} \\ \hline
 {Cables}&& \\ \hline
 {Rack}&{We have rack space for this now - next time we will need a rack}& \\ \hline
 {2025}&& \\ \hline
-{Compute}&{AMD EPYC ZEN4 9554 - (Dual 64-core CPUs, 384GB RAM, 25GB interace)
+{Compute}&{AMD EPYC ZEN4 9554 - Dual 64-core CPUs - 384GB RAM - 25Gb interface
 }&{15} \\ \hline
-{Fast Storage}&{Sorage node AMD EPYC ZEN4 9554P (~20K) ~ 30T per node
- Dual 64-core CPUs 384GB RAM 100Gb interface 
+{Fast Storage}&{AMD EPYC ZEN4 9554P - Dual 64-core CPUs - 30T per node - 384GB RAM - 100Gb interface 
 }&{18} \\ \hline
-{Latent Storage}&{Storage node AMD EPYC 9124 4th Gen  ~500TB per node
- Dual 16-core CPUs
- 192GB RAM
- 10Gb interface }&{48} \\ \hline
+{Latent Storage}&{AMD EPYC 9124 4th Gen Dual 16-core CPUs - 500TB per node - 192GB RAM - 10Gb interface }&{48} \\ \hline
+{Network}&{100Gb Switches}&{2} \\ \hline
 \textbf{Total cores}&\textbf{Compute categiory nodes dual 64 core }&\textbf{2688} \\ \hline
 \textbf{Total storage}&\textbf{Fast and Latent - TB}&\textbf{28740} \\ \hline
 \end{longtable} \normalsize
