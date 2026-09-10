@@ -16,3 +16,7 @@ clean :
 acronyms.tex :$(TEX) myacronyms.txt
 	generateAcronyms.py  -t "DM Gen"  $(TEX)
 
+.FORCE:
+# #https://docs.google.com/spreadsheets/d/1s2Ur1SkZFOXldlAETIa9UxAKVnafeF4qXLRMCEuTWEQ/edit?gid=1613792548#gid=1613792548
+tables: .FORCE
+	makeTablesFromGoogle.py 1s2Ur1SkZFOXldlAETIa9UxAKVnafeF4qXLRMCEuTWEQ LDM-572\!A1:M
